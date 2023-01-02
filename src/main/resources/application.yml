@@ -1,0 +1,28 @@
+server:
+  port: 52001
+  servlet:
+    context-path: /
+
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate.default_schema: public
+      hibernate.format_sql: true
+      hibernate.jdbc.time_zone: UTC
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ella.db.elephantsql.com
+    username: txahfjtf
+    password: P31qkibsV2Bc-qTWVAOqE19B5GlXmUXX
+  graphql:
+    graphiql:
+      enabled: false
+graphql:
+  servlet:
+    mapping: /graphql
+
+
