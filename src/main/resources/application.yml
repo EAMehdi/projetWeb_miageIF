@@ -15,7 +15,7 @@ spring:
       hibernate.jdbc.time_zone: UTC
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://ella.db.elephantsql.com
+    url: jdbc:postgresql://ella.db.elephantsql.com/txahfjtf
     username: txahfjtf
     password: P31qkibsV2Bc-qTWVAOqE19B5GlXmUXX
   graphql:

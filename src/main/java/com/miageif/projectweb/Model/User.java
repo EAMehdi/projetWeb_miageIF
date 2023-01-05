@@ -2,16 +2,22 @@ package com.miageif.projectweb.Model;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Generated;
+import lombok.*;
 
+@Data
 @Entity
 @Table(name = "user")
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class User {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "user_id_sequence")
     private Integer id;
     @Column(name = "username")
     private String username;
+
+    public User(String username){
+        this.setUsername(username);
+    }
 }
