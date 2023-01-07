@@ -19,9 +19,6 @@ public class Stock {
     @Column(name = "stock_keye")
     private String stockKey;
 
-
-
-
     public Stock(String keyStock){
         this.setStockKey(keyStock);
     }
