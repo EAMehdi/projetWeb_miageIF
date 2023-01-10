@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -20,6 +21,11 @@ public class StockLocalApi {
     @GetMapping("local_stock/{stock_key}")
     public Optional<Stock> findUserByStockKey(@PathVariable String stock_key){
         return stockRepository.findByStockKey(stock_key);
+    }
+
+    @GetMapping("local_stocks/")
+    public List<Stock> findAll(){
+        return stockRepository.findAll();
     }
 
     @PostMapping("local_stock/{stock_key}")

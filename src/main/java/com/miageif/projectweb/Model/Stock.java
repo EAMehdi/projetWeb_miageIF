@@ -1,3 +1,4 @@
+
 package com.miageif.projectweb.Model;
 
 import jakarta.persistence.*;
@@ -8,18 +9,20 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "stock")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class Stock {
     @Id
-    @GeneratedValue(generator = "user_id_sequence")
+    @GeneratedValue(generator = "stock_id")
     private Integer idStock;
-    @Column(name = "stock_keye")
+
+    @Column(name = "stock_keye", unique = true)
     private String stockKey;
 
     public Stock(String keyStock){
-        this.setStockKey(keyStock);
+        this.setStockKey(keyStock.toUpperCase());
     }
 }
+

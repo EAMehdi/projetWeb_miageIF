@@ -12,9 +12,9 @@ import lombok.*;
 @Builder
 public class User {
     @Id
-    @GeneratedValue(generator = "user_id_sequence")
+    @GeneratedValue(generator = "user_id")
     private Integer id;
-    @Column(name = "username")
+    @Column(name = "username", unique = true)
     private String username;
 
     public User(String username){
