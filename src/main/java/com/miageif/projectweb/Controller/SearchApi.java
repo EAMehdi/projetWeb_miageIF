@@ -9,10 +9,7 @@ import com.miageif.projectweb.Repository.StockRepository;
 import com.miageif.projectweb.Repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -28,6 +25,7 @@ public class SearchApi {
     private final UserRepository userRepository;
     private final StockRepository stockRepository;
 
+    @CrossOrigin
     @GetMapping("search/user/{username}")
     public List<Search> findAllByUser(String username){
         return searchRepository.findAllByUser(userRepository.findByUsername(username).orElse(null));
@@ -37,6 +35,7 @@ public class SearchApi {
         return searchRepository.findAllByStock(stockRepository.findByStockKey(stock_key).orElse(null));
     }
 
+    @CrossOrigin
     @GetMapping("searches/")
     public List<Search> findAll(){
         return searchRepository.findAll();

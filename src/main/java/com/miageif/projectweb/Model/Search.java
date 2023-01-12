@@ -23,16 +23,14 @@ public class Search {
     @GeneratedValue(generator = "search_id")
     private Integer idSearch;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false) //fetch is used for performance, can be deleted
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false) //fetch is used for performance, can be deleted
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "stock_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private Stock stock;
 
     @JoinColumn(name = "search_timestamp", nullable = false)

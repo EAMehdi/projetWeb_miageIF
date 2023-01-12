@@ -18,6 +18,7 @@ public class Stock {
     @GeneratedValue(generator = "stock_id")
     private Integer idStock;
 
+
     @Column(name = "stock_keye", unique = true)
     private String stockKey;
 
